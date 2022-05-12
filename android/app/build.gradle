@@ -50,8 +50,8 @@ android {
         applicationId "com.clinic_managementtt.maybe"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
-        versionCode 3
-        versionName "125.325.222.2"
+        versionCode 4
+        versionName "125.22.2.1555"
     }
     signingConfigs {
         release {

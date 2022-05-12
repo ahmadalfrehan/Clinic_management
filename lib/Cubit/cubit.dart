@@ -181,4 +181,9 @@ class ClinicCubit extends Cubit<ClinicManagement> {
     await launch(launchUri.toString());
     print(launchUri);
   }
+
+  Future<void> launchInBrowser(Uri launchUri) async {
+    await launch(launchUri.toString());
+    print(launchUri);
+  }
 }

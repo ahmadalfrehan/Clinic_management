@@ -11,58 +11,62 @@ class SearcH extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) => ClinicCubit()..createDataBase(),
-      child: BlocConsumer<ClinicCubit, ClinicManagement>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          var c = ClinicCubit.get(context);
-          return Scaffold(
-            body: SafeArea(
-              child: Container(
-                color: const Color(0xFFECF0F3),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.0),
-                              borderSide:
-                                  BorderSide(color: c.Color1, width: 2.0),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.0),
-                              borderSide:
-                                  BorderSide(color: c.Color1, width: 2.0),
-                            ),
-                            fillColor: Colors.white,
-                            filled: true,
-                            prefixIcon: Icon(
-                              Icons.search,
-                              color: c.Color1,
-                            ),
-                            labelText: " Search "),
-                        onChanged: (String text) {
-                          text.length == 0 ? c.ty = true : c.ty = false;
-                          c.Search.clear();
-                          c.SearchInDelete(text);
-                        },
-                      ),
+    return BlocConsumer<ClinicCubit, ClinicManagement>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        var c = ClinicCubit.get(context);
+        return Scaffold(
+          body: SafeArea(
+            child: Container(
+              color: const Color(0xFFECF0F3),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            borderSide:
+                                BorderSide(color: c.Color1, width: 2.0),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            borderSide:
+                                BorderSide(color: c.Color1, width: 2.0),
+                          ),
+                          fillColor: Colors.white,
+                          filled: true,
+                          prefixIcon: Icon(
+                            Icons.search,
+                            color: c.Color1,
+                          ),
+                          labelText: " Search "),
+                      onChanged: (String text) {
+                        text.length == 0 ? c.ty = true : c.ty = false;
+                        c.Search.clear();
+                        c.SearchInDelete(text);
+                      },
                     ),
-                    Expanded(
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(vertical: 15),
-                        height: 1555,
-                        child: (c.Search.isEmpty || c.ty == true)
-                            ? const Center(
-                                child: Text('No element Found !'),
-                              )
-                            : ListView.builder(
-                                itemCount: c.Search.length,
-                                itemBuilder: (context, index) =>
-                                    GestureDetector(
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 15),
+                      height: 1555,
+                      child: (c.Search.isEmpty || c.ty == true)
+                          ? const Center(
+                              child: Text('No element Found !'),
+                            )
+                          : ListView.separated(
+                              physics: const BouncingScrollPhysics(),
+                              separatorBuilder: (context, index) =>
+                                  const SizedBox(
+                                height: 10,
+                              ),
+                              itemCount: c.Search.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: GestureDetector(
                                   onTap: () {
                                     Navigator.push(
                                       context,
@@ -120,8 +124,8 @@ class SearcH extends StatelessWidget {
                                           children: [
                                             Text(
                                               c.Search[index]['name'],
-                                              style:
-                                                  const TextStyle(fontSize: 22),
+                                              style: const TextStyle(
+                                                  fontSize: 22),
                                             ),
                                           ],
                                         ),
@@ -152,7 +156,8 @@ class SearcH extends StatelessWidget {
                                                     context,
                                                     MaterialPageRoute(
                                                       builder: (context) =>
-                                                          Edit(index, c.Search),
+                                                          Edit(index,
+                                                              c.Search),
                                                     ),
                                                   );
                                                 },
@@ -178,7 +183,8 @@ class SearcH extends StatelessWidget {
                                                       id: c.Search[index]
                                                           ['id']);
                                                 },
-                                                child: const Icon(Icons.delete),
+                                                child:
+                                                    const Icon(Icons.delete),
                                               ),
                                             ),
                                           ],
@@ -188,15 +194,15 @@ class SearcH extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                      ),
+                            ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

@@ -45,6 +45,12 @@ class Edit extends StatelessWidget {
       },
       builder: (context, state) {
         var c = ClinicCubit.get(context);
+        nameEditController.text = list[index]['name'];
+        lasTEditController.text = list[index]['lastN'];
+        InfoEditController.text = list[index]['Information'];
+        PhoneEditController.text = list[index]['phoneN'];
+        acccountEditController.text = list[index]['Account'];
+        restEditController.text = list[index]['rest'];
         return Scaffold(
           backgroundColor: const Color(0xFFECF0F3),
           appBar: AppBar(
@@ -113,7 +119,7 @@ class Edit extends StatelessWidget {
                             information: InfoEditController.text,
                             account: acccountEditController.text,
                             rest: restEditController.text,
-                            status: 'new',
+                            status: list[index]['status'],
                           );
                         }
                         nameEditController = TextEditingController();

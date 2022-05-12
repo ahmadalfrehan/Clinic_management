@@ -166,3 +166,133 @@ class See extends StatelessWidget {
     );
   }
 }
+/*
+*  ListWheelScrollView.useDelegate(
+                itemExtent: 300,
+                physics: FixedExtentScrollPhysics(),
+                //overAndUnderCenterOpacity: 0.5,
+                //perspective: 0.002,
+                onSelectedItemChanged: (index){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Details(c.elements, index),
+                    ),
+                  );
+                },
+                childDelegate: ListWheelChildBuilderDelegate(
+                  builder: (context, index) => Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTap: () {
+                      },
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              offset: Offset(4, 7),
+                              blurRadius: 10,
+                            ),
+                          ],
+                          color: Color(0xFFf7ede2),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(30),
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                CircleAvatar(
+                                  backgroundColor: Color(0xFF84a59d),
+                                  child: Text(
+                                    c.elements[index]['id'].toString(),
+                                    style: const TextStyle(
+                                        fontSize: 22, color: Color(0xFFf7ede2)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  c.elements[index]['name'],
+                                  style: const TextStyle(fontSize: 22),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              c.elements[index]['lastN'],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              c.elements[index]['Account'],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const Divider(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Expanded(
+                                  child: MaterialButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              Edit(index, c.elements),
+                                        ),
+                                      );
+                                    },
+                                    child: const Icon(Icons.edit),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: MaterialButton(
+                                    onPressed: () {
+                                      c.UpdateStatus(
+                                          status: 'old',
+                                          id: c.elements[index]['id']);
+                                    },
+                                    child: const Icon(Icons.archive),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: MaterialButton(
+                                    onPressed: () {
+                                      c.DeleteFromDataBase(
+                                          id: c.elements[index]['id']);
+                                    },
+                                    child: const Icon(Icons.delete),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  childCount: c.elements.length,
+                ),
+              ),
+* */

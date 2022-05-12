@@ -1,4 +1,4 @@
-package com.example.lol
+package com.clinic_managementtt.maybe
 
 import io.flutter.embedding.android.FlutterActivity
 

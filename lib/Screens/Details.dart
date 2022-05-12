@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:linkwell/linkwell.dart';
 import '../Cubit/cubit.dart';
 import '../Cubit/states.dart';
 import '../HomeLayout.dart';
@@ -264,10 +265,7 @@ class Details extends StatelessWidget {
                                       Expanded(
                                         child: Padding(
                                           padding: const EdgeInsets.all(30.0),
-                                          child: Text(
-                                            list[index]['Information'],
-                                            style: const TextStyle(),
-                                          ),
+                                          child: LinkWell(list[index]['Information'],),
                                         ),
                                       ),
                                     ],

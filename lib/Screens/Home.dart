@@ -33,6 +33,10 @@ class Home extends StatelessWidget {
               content: Text('successfully added the ' + state.num.toString()),
             ),
           );
+          Timer(
+            const Duration(seconds: 2),
+            () => ClinicCubit.get(context).ChangeBottomNav(0),
+          );
         }
         if (state is ClinicManagementAddErrorState) {
           ScaffoldMessenger.of(context).showSnackBar(
