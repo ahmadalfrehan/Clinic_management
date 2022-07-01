@@ -1,16 +1,12 @@
-# lol
+# Clinic managment 
+Clinic management is an app easy to use and enjoyable and equitable and useable and he can store alot of patients and thier details like name and last name and phone number and information about The patient's situation and many of ditails ..
+Also it is support the edit and delete all or delete 
+ by id and quick search and insert the patients and thier details with
+The ability to add items to the archive and display them
+Make it more responsive 
+Delete and edit items from the home screen
+And the ability to find out if the text contains links 
+And you can open the link when you press on it
+If you encounter problems with it or want to suggest features, please contact us..
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [get it on google play](https://play.google.com/store/apps/details?id=com.clinic_managementtt.maybe)
